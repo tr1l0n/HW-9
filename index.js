@@ -76,7 +76,7 @@
 // console.log(total);
 
 // 7
-let logins = ['a', 'b', 'c'];
+let logins = ['a', 'b', 'c','ddddddd'];
 function isLoginValid(login) {
     if (login.length > 4 && login.length <= 16) {
         return true;  
@@ -89,15 +89,15 @@ function isLoginUnique(allLogins, login) {
     };
     return true;
 }
-function addLogin(alLogins, login) {
-    if (isLoginValid === false) {
+function addLogin(allLogins, login) {
+    if (isLoginValid(login) === false) {
         return 'Помилка! Логін повинен бути від 4 до 16 символів';
     }
-    if (isLoginUnique === false) {
+    if (isLoginUnique(allLogins,login) === false) {
         return 'Такий логін уже використовується!';
     }
     logins.push(login);
     return 'Логін успішно доданий!';
 }
-console.log(addLogin(logins,'a'));
+console.log(addLogin(logins,'dddddd'));
 
